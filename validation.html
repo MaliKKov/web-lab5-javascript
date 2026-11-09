@@ -1,0 +1,72 @@
+
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Валидация формы — Лабораторная №5</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <script src="js/app.js" defer></script>
+</head>
+<body>
+    <header class="site-header">
+        <div class="container">
+            <p class="eyebrow">Компонент №9</p>
+            <h1>Валидация формы</h1>
+            <p>Проверка пользовательских данных на JavaScript</p>
+        </div>
+    </header>
+
+    <main class="container demo-page">
+        <a href="index.html" class="back-link">
+            ← Вернуться к заданиям
+        </a>
+
+        <section class="demo-panel">
+            <h2>Форма регистрации</h2>
+            <p>Заполните поля. JavaScript проверит правильность данных.</p>
+
+            <form id="validation-form" novalidate>
+                <div class="form-field">
+                    <label for="form-name">Имя</label>
+                    <input type="text" id="form-name"
+                           placeholder="Введите имя">
+                    <small class="form-error" id="name-error"></small>
+                </div>
+
+                <div class="form-field">
+                    <label for="form-email">Электронная почта</label>
+                    <input type="email" id="form-email"
+                           placeholder="example@mail.com">
+                    <small class="form-error" id="email-error"></small>
+                </div>
+
+                <div class="form-field">
+                    <label for="form-password">Пароль</label>
+                    <input type="password" id="form-password"
+                           placeholder="Минимум 8 символов">
+                    <small class="form-error" id="password-error"></small>
+                </div>
+
+                <div class="form-field">
+                    <label for="form-confirm">Повторите пароль</label>
+                    <input type="password" id="form-confirm"
+                           placeholder="Введите пароль ещё раз">
+                    <small class="form-error" id="confirm-error"></small>
+                </div>
+
+                <button type="submit" class="demo-button">
+                    Проверить данные
+                </button>
+
+                <p id="form-message" class="form-message"
+                   role="status" aria-live="polite"></p>
+            </form>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <p>Лабораторная работа №5 · Вариант №1 · 2026</p>
+    </footer>
+</body>
+</html>

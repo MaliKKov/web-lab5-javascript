@@ -1,0 +1,53 @@
+
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Счётчик кликов — Лабораторная №5</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <script src="js/app.js" defer></script>
+</head>
+<body>
+    <header class="site-header">
+        <div class="container">
+            <p class="eyebrow">Компонент №1</p>
+            <h1>Счётчик кликов</h1>
+            <p>Интерактивный компонент на JavaScript</p>
+        </div>
+    </header>
+
+    <main class="container demo-page">
+        <a href="index.html" class="back-link">← Вернуться к заданиям</a>
+
+        <section class="demo-panel">
+            <h2>Количество нажатий</h2>
+            <p>Нажимайте на кнопки для изменения значения счётчика.</p>
+
+            <div class="counter-display" id="counter-value"
+                 role="status" aria-live="polite">0</div>
+
+            <div class="counter-actions">
+                <button type="button" class="demo-button"
+                        id="counter-minus">
+                    −1
+                </button>
+
+                <button type="button" class="demo-button"
+                        id="counter-plus">
+                    +1
+                </button>
+
+                <button type="button" class="demo-button counter-reset"
+                        id="counter-reset">
+                    Сбросить
+                </button>
+            </div>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <p>Лабораторная работа №5 · Вариант №1 · 2026</p>
+    </footer>
+</body>
+</html>

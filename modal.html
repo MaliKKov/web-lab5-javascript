@@ -1,0 +1,75 @@
+
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Модальное окно — Лабораторная №5</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <script src="js/app.js" defer></script>
+</head>
+<body>
+    <header class="site-header">
+        <div class="container">
+            <p class="eyebrow">Компонент №6</p>
+            <h1>Модальное окно</h1>
+            <p>Управление всплывающим окном через JavaScript</p>
+        </div>
+    </header>
+
+    <main class="container demo-page">
+        <a href="index.html" class="back-link">
+            ← Вернуться к заданиям
+        </a>
+
+        <section class="demo-panel">
+            <h2>Демонстрация модального окна</h2>
+            <p>
+                Нажмите на кнопку ниже, чтобы открыть окно.
+                Закрыть его можно несколькими способами.
+            </p>
+
+            <button type="button" class="demo-button"
+                    id="modal-open">
+                Открыть модальное окно
+            </button>
+        </section>
+    </main>
+
+    <dialog class="custom-modal" id="demo-modal"
+            aria-labelledby="modal-title">
+        <div class="custom-modal__header">
+            <h2 id="modal-title">Модальное окно</h2>
+
+            <button type="button"
+                    class="custom-modal__close"
+                    id="modal-close-cross"
+                    aria-label="Закрыть окно">
+                ×
+            </button>
+        </div>
+
+        <div class="custom-modal__content">
+            <p>
+                Это пример модального окна, созданного с
+                помощью HTML, CSS и JavaScript.
+            </p>
+            <p>
+                Пока окно открыто, взаимодействие с
+                остальной страницей заблокировано.
+            </p>
+        </div>
+
+        <div class="custom-modal__footer">
+            <button type="button" class="demo-button"
+                    id="modal-close-button">
+                Закрыть
+            </button>
+        </div>
+    </dialog>
+
+    <footer class="site-footer">
+        <p>Лабораторная работа №5 · Вариант №1 · 2026</p>
+    </footer>
+</body>
+</html>

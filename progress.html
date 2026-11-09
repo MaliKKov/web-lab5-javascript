@@ -1,0 +1,80 @@
+
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Прогресс-бар — Лабораторная №5</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <script src="js/app.js" defer></script>
+</head>
+<body>
+    <header class="site-header">
+        <div class="container">
+            <p class="eyebrow">Компонент №13</p>
+            <h1>Прогресс-бар</h1>
+            <p>Интерактивное управление прогрессом на JavaScript</p>
+        </div>
+    </header>
+
+    <main class="container demo-page">
+        <a href="index.html" class="back-link">
+            ← Вернуться к заданиям
+        </a>
+
+        <section class="demo-panel">
+            <h2>Выполнение задачи</h2>
+            <p>
+                Управляйте процентом выполнения с помощью кнопок.
+                Значение прогресса находится в диапазоне от 0 до 100%.
+            </p>
+
+            <div class="progress-info">
+                <span>Текущий прогресс</span>
+                <strong id="progress-value">0%</strong>
+            </div>
+
+            <div class="progress-track"
+                 id="progress-track"
+                 role="progressbar"
+                 aria-label="Выполнение задачи"
+                 aria-valuemin="0"
+                 aria-valuemax="100"
+                 aria-valuenow="0">
+                <div class="progress-fill" id="progress-fill"></div>
+            </div>
+
+            <p class="progress-status" id="progress-status"
+               role="status" aria-live="polite">
+                Задача ещё не начата.
+            </p>
+
+            <div class="progress-actions">
+                <button type="button" class="demo-button"
+                        id="progress-minus">
+                    −10%
+                </button>
+
+                <button type="button" class="demo-button"
+                        id="progress-plus">
+                    +10%
+                </button>
+
+                <button type="button" class="demo-button"
+                        id="progress-random">
+                    Случайное значение
+                </button>
+
+                <button type="button" class="demo-button progress-reset"
+                        id="progress-reset">
+                    Сбросить
+                </button>
+            </div>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <p>Лабораторная работа №5 · Вариант №1 · 2026</p>
+    </footer>
+</body>
+</html>

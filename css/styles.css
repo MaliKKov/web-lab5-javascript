@@ -1,0 +1,584 @@
+
+/* Общие настройки */
+
+:root {
+    --background: #f3f6fb;
+    --surface: #ffffff;
+    --text: #1e293b;
+    --muted: #64748b;
+    --primary: #3158a7;
+    --primary-hover: #234480;
+    --border: #e2e8f0;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    min-height: 100vh;
+    font-family: Arial, sans-serif;
+    background: var(--background);
+    color: var(--text);
+    line-height: 1.6;
+}
+
+.container {
+    width: min(1100px, 92%);
+    margin: 0 auto;
+}
+
+/* Шапка */
+
+.site-header {
+    background: #172c50;
+    color: white;
+    padding: 55px 0;
+    text-align: center;
+}
+
+    .site-header h1 {
+        font-size: 36px;
+        margin: 5px 0;
+    }
+
+    .site-header p {
+        color: #d4dfef;
+    }
+
+.eyebrow {
+    font-size: 13px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-weight: bold;
+}
+
+/* Основное содержимое */
+
+.main-content {
+    padding: 45px 0 65px;
+}
+
+    .main-content h2 {
+        margin: 0 0 10px;
+        font-size: 28px;
+    }
+
+.section-description {
+    color: var(--muted);
+    margin-bottom: 30px;
+}
+
+/* Сетка компонентов */
+
+.components-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 22px;
+}
+
+.component-card {
+    display: flex;
+    flex-direction: column;
+    padding: 27px;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    box-shadow: 0 3px 12px #172c500d;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+    .component-card:hover {
+        transform: translateY(-6px);
+        box-shadow: 0 12px 25px #172c501c;
+    }
+
+.component-icon {
+    font-size: 42px;
+    margin-bottom: 15px;
+}
+
+.component-card h3 {
+    margin: 0 0 10px;
+    font-size: 19px;
+}
+
+.component-card p {
+    color: var(--muted);
+    flex-grow: 1;
+}
+
+.card-button {
+    display: inline-block;
+    align-self: flex-start;
+    padding: 11px 23px;
+    background: var(--primary);
+    color: white;
+    border-radius: 7px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: background 0.25s ease;
+}
+
+    .card-button:hover {
+        background: var(--primary-hover);
+    }
+
+/* Общие стили будущих страниц */
+
+.demo-page {
+    padding: 45px 0 65px;
+}
+
+.demo-panel {
+    max-width: 650px;
+    margin: 0 auto;
+    padding: 35px;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    box-shadow: 0 4px 15px #172c500d;
+}
+
+    .demo-panel h2 {
+        margin-top: 0;
+    }
+
+.demo-button {
+    padding: 12px 22px;
+    border: none;
+    border-radius: 7px;
+    background: var(--primary);
+    color: white;
+    font: inherit;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background 0.25s ease;
+}
+
+    .demo-button:hover {
+        background: var(--primary-hover);
+    }
+
+.back-link {
+    display: inline-block;
+    margin-bottom: 25px;
+    color: var(--primary);
+    font-weight: bold;
+    text-decoration: none;
+}
+
+    .back-link:hover {
+        text-decoration: underline;
+    }
+
+/* Подвал */
+
+.site-footer {
+    padding: 25px;
+    background: #172c50;
+    color: #d4dfef;
+    text-align: center;
+}
+
+/* Адаптивность */
+
+@media (max-width: 900px) {
+    .components-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+}
+
+@media (max-width: 600px) {
+    .components-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .site-header h1 {
+        font-size: 27px;
+    }
+
+    .demo-panel {
+        padding: 22px;
+    }
+}
+
+
+
+/* Компонент №1 — Счётчик кликов */
+
+.counter-display {
+    margin: 30px auto;
+    padding: 25px;
+    max-width: 260px;
+    background: #eef3fc;
+    border: 2px solid var(--border);
+    border-radius: 12px;
+    color: var(--primary);
+    text-align: center;
+    font-size: 64px;
+    font-weight: bold;
+}
+
+.counter-actions {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 12px;
+}
+
+.counter-reset {
+    background: #64748b;
+}
+
+    .counter-reset:hover {
+        background: #475569;
+    }
+
+
+
+/* ==========================================
+   Компонент №2 — Переключатель темы
+   ========================================== */
+
+.theme-page {
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.theme-panel {
+    text-align: center;
+    transition: background-color 0.3s ease, border-color 0.3s ease;
+}
+
+.theme-preview {
+    margin: 30px auto;
+    padding: 30px;
+    background: #eef3fc;
+    border: 1px solid #dbe4f0;
+    border-radius: 12px;
+    transition: background-color 0.3s ease, border-color 0.3s ease;
+}
+
+.theme-preview-icon {
+    font-size: 60px;
+}
+
+.theme-preview h3 {
+    margin: 10px 0;
+    font-size: 24px;
+}
+
+.theme-toggle {
+    min-width: 250px;
+}
+
+/* Тёмная тема */
+
+.theme-page.dark-theme {
+    --background: #101827;
+    --surface: #1c293b;
+    --text: #f1f5f9;
+    --muted: #b2c0d0;
+    --primary: #638dea;
+    --primary-hover: #456fc9;
+    --border: #394a61;
+}
+
+    .theme-page.dark-theme .site-header,
+    .theme-page.dark-theme .site-footer {
+        background: #080f1c;
+    }
+
+    .theme-page.dark-theme .theme-preview {
+        background: #25354b;
+        border-color: #41536b;
+    }
+
+    .theme-page.dark-theme .back-link {
+        color: #90b2ff;
+    }
+
+    .theme-page.dark-theme .demo-button {
+        color: #ffffff;
+    }
+
+
+
+/* ==========================================
+   Компонент №6 — Модальное окно
+   ========================================== */
+
+.custom-modal {
+    width: min(480px, 92%);
+    padding: 0;
+    border: none;
+    border-radius: 14px;
+    background: var(--surface);
+    color: var(--text);
+    box-shadow: 0 20px 60px #00000040;
+}
+
+    .custom-modal::backdrop {
+        background: #071528a8;
+        backdrop-filter: blur(4px);
+    }
+
+    .custom-modal[open] {
+        animation: modal-appear 0.25s ease-out;
+    }
+
+.custom-modal__header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 15px;
+    padding: 22px 25px;
+    border-bottom: 1px solid var(--border);
+}
+
+    .custom-modal__header h2 {
+        margin: 0;
+        font-size: 23px;
+    }
+
+.custom-modal__close {
+    width: 36px;
+    height: 36px;
+    border: none;
+    border-radius: 8px;
+    background: #eef2f7;
+    color: #334155;
+    font-size: 27px;
+    cursor: pointer;
+}
+
+    .custom-modal__close:hover {
+        background: #dce4ee;
+    }
+
+.custom-modal__content {
+    padding: 20px 25px;
+    color: var(--muted);
+}
+
+.custom-modal__footer {
+    display: flex;
+    justify-content: flex-end;
+    padding: 15px 25px 25px;
+}
+
+@keyframes modal-appear {
+    from {
+        opacity: 0;
+        transform: translateY(-15px) scale(0.96);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+
+
+
+/* ==========================================
+   Компонент №9 — Валидация формы
+   ========================================== */
+
+#validation-form {
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+    margin-top: 25px;
+}
+
+.form-field {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+    .form-field label {
+        font-weight: bold;
+    }
+
+    .form-field input {
+        width: 100%;
+        padding: 12px 14px;
+        border: 1px solid var(--border);
+        border-radius: 8px;
+        font: inherit;
+        outline: none;
+    }
+
+        .form-field input:focus {
+            border-color: var(--primary);
+        }
+
+        .form-field input.input-invalid {
+            border-color: #dc3545;
+            background: #fff7f7;
+        }
+
+        .form-field input.input-valid {
+            border-color: #198754;
+        }
+
+.form-error {
+    min-height: 18px;
+    color: #dc3545;
+    font-size: 13px;
+}
+
+.form-message {
+    margin: 0;
+    font-weight: bold;
+}
+
+    .form-message.success {
+        color: #198754;
+    }
+
+    .form-message.failure {
+        color: #dc3545;
+    }
+
+#validation-form .demo-button {
+    align-self: flex-start;
+}
+
+
+
+/* ==========================================
+   Компонент №13 — Прогресс-бар
+   ========================================== */
+
+.progress-info {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 15px;
+    margin: 30px 0 12px;
+}
+
+    .progress-info strong {
+        font-size: 28px;
+        color: var(--primary);
+    }
+
+.progress-track {
+    width: 100%;
+    height: 28px;
+    overflow: hidden;
+    border-radius: 20px;
+    background: #e2e8f0;
+    border: 1px solid #cbd5e1;
+}
+
+.progress-fill {
+    width: 0%;
+    height: 100%;
+    background: linear-gradient(90deg, #3158a7, #61a5fa);
+    border-radius: inherit;
+    transition: width 0.4s ease;
+}
+
+    .progress-fill.completed {
+        background: linear-gradient(90deg, #198754, #43c98b);
+    }
+
+.progress-status {
+    margin: 16px 0 25px;
+    color: var(--muted);
+    font-weight: bold;
+}
+
+.progress-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.progress-reset {
+    background: #64748b;
+}
+
+    .progress-reset:hover {
+        background: #475569;
+    }
+
+
+
+
+/* ==========================================
+   Компонент №15 — Показать/скрыть пароль
+   ========================================== */
+
+.password-component {
+    margin-top: 25px;
+}
+
+    .password-component label {
+        display: block;
+        margin-bottom: 10px;
+        font-weight: bold;
+    }
+
+.password-input-wrapper {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+    .password-input-wrapper input {
+        flex: 1;
+        min-width: 0;
+        padding: 13px 15px;
+        border: 1px solid var(--border);
+        border-radius: 8px;
+        font: inherit;
+        outline: none;
+    }
+
+        .password-input-wrapper input:focus {
+            border-color: var(--primary);
+            box-shadow: 0 0 0 3px #3158a71f;
+        }
+
+.password-toggle {
+    padding: 13px 18px;
+    border: 1px solid var(--primary);
+    border-radius: 8px;
+    background: var(--surface);
+    color: var(--primary);
+    font: inherit;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background 0.25s ease, color 0.25s ease;
+}
+
+    .password-toggle:hover {
+        background: var(--primary);
+        color: #ffffff;
+    }
+
+.password-status {
+    margin: 15px 0 25px;
+    color: var(--muted);
+}
+
+.password-clear {
+    background: #64748b;
+}
+
+    .password-clear:hover {
+        background: #475569;
+    }
+
+@media (max-width: 450px) {
+    .password-input-wrapper {
+        flex-direction: column;
+        align-items: stretch;
+    }
+}

@@ -1,0 +1,81 @@
+
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Калькулятор — Лабораторная №5</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <script src="js/app.js" defer></script>
+</head>
+<body>
+    <header class="site-header">
+        <div class="container">
+            <p class="eyebrow">Компонент №4</p>
+            <h1>Калькулятор</h1>
+            <p>Выполнение арифметических операций на JavaScript</p>
+        </div>
+    </header>
+
+    <main class="container demo-page">
+        <a href="index.html" class="back-link">
+            ← Вернуться к заданиям
+        </a>
+
+        <section class="demo-panel">
+            <h2>Простой калькулятор</h2>
+            <p>Введите два числа и выберите математическую операцию.</p>
+
+            <div class="calculator">
+                <label for="calc-first">Первое число</label>
+                <input type="number"
+                       id="calc-first"
+                       step="any"
+                       placeholder="Например, 15">
+
+                <label for="calc-second">Второе число</label>
+                <input type="number"
+                       id="calc-second"
+                       step="any"
+                       placeholder="Например, 5">
+
+                <p class="calculator-label">Выберите операцию:</p>
+
+                <div class="calculator-actions">
+                    <button type="button" class="demo-button"
+                            data-calc-operation="add">
+                        +
+                    </button>
+                    <button type="button" class="demo-button"
+                            data-calc-operation="subtract">
+                        −
+                    </button>
+                    <button type="button" class="demo-button"
+                            data-calc-operation="multiply">
+                        ×
+                    </button>
+                    <button type="button" class="demo-button"
+                            data-calc-operation="divide">
+                        ÷
+                    </button>
+                </div>
+
+                <div class="calculator-result" aria-live="polite">
+                    <span>Результат:</span>
+                    <strong id="calc-result">—</strong>
+                </div>
+
+                <button type="button"
+                        class="demo-button calculator-clear"
+                        id="calc-clear">
+                    Очистить
+                </button>
+            </div>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <p>Лабораторная работа №5 · Вариант №1 · 2026</p>
+    </footer>
+</body>
+</html>
